@@ -13,17 +13,38 @@ public class OneOfEachStats {
 		int T = Integer.parseInt(args[0]);
 		int seed = Integer.parseInt(args[1]);
 		// Initailizes a random numbers generator with the given seed value
-        Random generator = new Random(seed);  
-		
-		//// In the previous version of this program, you used a statement like:
-		//// double rnd = Math.random();
-		//// Where "rnd" is the variable that stores the generated random value.
-		//// In this version of the program, replace this statement with:
-		//// double rnd = generator.nextDouble();
-		//// This statement will generate a random value in the range [0,1),
-		//// just like you had in the previous version, except that the 
-		//// randomization will be based on the given seed.
-		//// This is the only change that you have to do in the program.
+               Random generator = new Random(seed);  
+               int 2child =0;
+               int 3child =0;
+               int 4OrMore=0;
+               int sumChild=0;
+               for( int i=0 ; i<T ; i++) {
+                   int bCount=0 ;
+                   int gCount=0;
+                   while (bCount<1 || gCount<1) {
+                       double rand= genarator.nextDouble();
+                       boolean sex= ( rand< 0.5 ) ;
+                       if ( sex) {
+                           bCount++;           
+                     } else {
+                          gCount++;
+              }
+           
+        }     
+                   if ( bCount+gCount==2)
+                       2child++;
+                   if ( bCount+gCount==3)
+                       3child++;
+                   if (bCount+gCount >= 4)
+                      4OrMore++;
+                   sumChild= sumChild + bCount + gCount ;
+
+               }
+            double avg= (sumChild / 1.0) / T ;
+            System.out.println("Average: " + avg + " children to get at least one of each gender.");
+	    System.out.println("Number of families with 2 children: " + 2child);	
+            System.out.println("Number of families with 2children: " + 3child);	
+            System.out.println("Number of families with 4 or more children: " + 4OrMore);
 		    
 	}
 }
