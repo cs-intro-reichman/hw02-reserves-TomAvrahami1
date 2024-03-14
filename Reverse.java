@@ -4,13 +4,12 @@
  */
 public class Reverse {
 	public static void main (String[] args){
-	String s= args[0];
-        String reverse= "";
-        for (int i= s.length()-1; i>=0; i-- ) {
-        reverse= reverse + s.charAt( i ); 
-        }
-        char m= s.charAt( (s.length()-1)/2);
-       System.out.println( reverse);
-       System.out.println("the middle charecter is: "+m);
+		String str = args[0];
+		int n = str.length() - 1;
+		for (int i = n ; i >= 0; i--) {
+		    System.out.print(str.charAt(i));
+		}
+		System.out.println();
+		System.out.println("The middle character is " + str.charAt(n / 2));
 	}
 }
